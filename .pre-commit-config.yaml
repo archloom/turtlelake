@@ -1,0 +1,38 @@
+# Pre-commit hooks for turtlelake.
+#
+# Setup:
+#   uv pip install pre-commit
+#   uv run pre-commit install
+#
+# Run on demand:
+#   uv run pre-commit run --all-files
+
+repos:
+  # Project-local lint + format. ruff is already a dev dep so this
+  # uses the same version as `uv run ruff check`.
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.6.9
+    hooks:
+      - id: ruff
+        args: [--fix]
+        types_or: [python, pyi]
+      - id: ruff-format
+        types_or: [python, pyi]
+
+  # File-hygiene basics. Cheap, prevent the small papercuts that
+  # otherwise generate review-comment noise.
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+        # Markdown allows trailing spaces as a hard line break — let
+        # those through; flag everything else.
+        args: [--markdown-linebreak-ext=md]
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-toml
+      - id: check-merge-conflict
+      - id: check-added-large-files
+        # Lance datasets and ontology snapshots can be big; cap at
+        # 5 MiB so we notice before something heavy slips into git.
+        args: [--maxkb=5120]

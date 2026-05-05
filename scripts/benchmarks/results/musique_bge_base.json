@@ -1,0 +1,86 @@
+{
+  "config": {
+    "questions_scored": 200,
+    "k_flat": 10,
+    "k_seed_graph": 5,
+    "hops": 2,
+    "embedding": "BAAI/bge-base-en-v1.5",
+    "embedding_dim": 768,
+    "corpus_size": 11656,
+    "mention_edges": 14650,
+    "in_memory": "auto",
+    "methods": [
+      "flat",
+      "graph",
+      "hybrid",
+      "ppr"
+    ]
+  },
+  "results": {
+    "flat": {
+      "recall": 0.55,
+      "total_seconds": 2.135,
+      "queries_per_second": 93.7
+    },
+    "graph": {
+      "recall": 0.6804166666666667,
+      "total_seconds": 60.85,
+      "queries_per_second": 3.3
+    },
+    "hybrid": {
+      "recall": 0.5395833333333333,
+      "total_seconds": 2.846,
+      "queries_per_second": 70.3
+    },
+    "ppr": {
+      "recall": 0.47583333333333333,
+      "total_seconds": 1.922,
+      "queries_per_second": 104.1
+    }
+  },
+  "by_hop_class": {
+    "2hop": {
+      "n": 103,
+      "flat_recall": 0.6213592233009708,
+      "graph_recall": 0.7718446601941747,
+      "hybrid_recall": 0.6067961165048543,
+      "ppr_recall": 0.5776699029126213
+    },
+    "3hop1": {
+      "n": 42,
+      "flat_recall": 0.492063492063492,
+      "graph_recall": 0.6428571428571429,
+      "hybrid_recall": 0.4841269841269841,
+      "ppr_recall": 0.39682539682539675
+    },
+    "3hop2": {
+      "n": 16,
+      "flat_recall": 0.5833333333333333,
+      "graph_recall": 0.625,
+      "hybrid_recall": 0.5208333333333333,
+      "ppr_recall": 0.4583333333333333
+    },
+    "4hop1": {
+      "n": 28,
+      "flat_recall": 0.42857142857142855,
+      "graph_recall": 0.5178571428571429,
+      "hybrid_recall": 0.4255952380952381,
+      "ppr_recall": 0.3005952380952381
+    },
+    "4hop2": {
+      "n": 7,
+      "flat_recall": 0.32142857142857145,
+      "graph_recall": 0.4404761904761905,
+      "hybrid_recall": 0.40476190476190477,
+      "ppr_recall": 0.25
+    },
+    "4hop3": {
+      "n": 4,
+      "flat_recall": 0.4375,
+      "graph_recall": 0.5,
+      "hybrid_recall": 0.5,
+      "ppr_recall": 0.375
+    }
+  },
+  "wall_seconds": 83.2
+}

@@ -1,0 +1,25 @@
+downloading MuSiQue dataset...
+  1000 questions, 11656 corpus paragraphs
+  scoring 200 questions
+  fitting embedder...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 199/199 [00:00<00:00, 2803.84it/s]
+  embedder: BAAI/bge-base-en-v1.5 (dim=768) in 23.9s
+  embedding paragraphs...
+  embedded 11656 paragraphs in 1807.8s
+  ingesting RDF...
+    49618 quads, 14650 mention edges in 278.2s
+  index: built (auto:flat)
+  scoring questions...
+    50/200  flat=0.575  graph=0.687  hybrid=0.548  ppr=0.493
+    100/200  flat=0.571  graph=0.680  hybrid=0.527  ppr=0.488
+    150/200  flat=0.566  graph=0.672  hybrid=0.548  ppr=0.483
+    200/200  flat=0.550  graph=0.680  hybrid=0.540  ppr=0.476
+wrote D:\Github\turtlelake\scripts\benchmarks\results\musique_bge_base.json
+
+  flat     recall = 0.550    QPS = 93.7
+  graph    recall = 0.680    QPS = 3.3
+  hybrid   recall = 0.540    QPS = 70.3
+  ppr      recall = 0.476    QPS = 104.1

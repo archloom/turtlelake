@@ -1,0 +1,86 @@
+{
+  "config": {
+    "questions_scored": 200,
+    "k_flat": 10,
+    "k_seed_graph": 5,
+    "hops": 2,
+    "embedding": "sentence-transformers/all-MiniLM-L6-v2",
+    "embedding_dim": 384,
+    "corpus_size": 11656,
+    "mention_edges": 14650,
+    "in_memory": "auto",
+    "methods": [
+      "flat",
+      "graph",
+      "hybrid",
+      "ppr"
+    ]
+  },
+  "results": {
+    "flat": {
+      "recall": 0.48291666666666666,
+      "total_seconds": 1.692,
+      "queries_per_second": 118.2
+    },
+    "graph": {
+      "recall": 0.6020833333333333,
+      "total_seconds": 57.7,
+      "queries_per_second": 3.5
+    },
+    "hybrid": {
+      "recall": 0.50125,
+      "total_seconds": 2.41,
+      "queries_per_second": 83.0
+    },
+    "ppr": {
+      "recall": 0.40708333333333335,
+      "total_seconds": 1.515,
+      "queries_per_second": 132.0
+    }
+  },
+  "by_hop_class": {
+    "2hop": {
+      "n": 103,
+      "flat_recall": 0.5436893203883495,
+      "graph_recall": 0.7281553398058253,
+      "hybrid_recall": 0.558252427184466,
+      "ppr_recall": 0.470873786407767
+    },
+    "3hop1": {
+      "n": 42,
+      "flat_recall": 0.43650793650793646,
+      "graph_recall": 0.5,
+      "hybrid_recall": 0.4682539682539682,
+      "ppr_recall": 0.373015873015873
+    },
+    "3hop2": {
+      "n": 16,
+      "flat_recall": 0.5,
+      "graph_recall": 0.5625,
+      "hybrid_recall": 0.5,
+      "ppr_recall": 0.4583333333333333
+    },
+    "4hop1": {
+      "n": 28,
+      "flat_recall": 0.36607142857142855,
+      "graph_recall": 0.40773809523809523,
+      "hybrid_recall": 0.38392857142857145,
+      "ppr_recall": 0.22916666666666669
+    },
+    "4hop2": {
+      "n": 7,
+      "flat_recall": 0.35714285714285715,
+      "graph_recall": 0.42857142857142855,
+      "hybrid_recall": 0.33333333333333337,
+      "ppr_recall": 0.35714285714285715
+    },
+    "4hop3": {
+      "n": 4,
+      "flat_recall": 0.375,
+      "graph_recall": 0.25,
+      "hybrid_recall": 0.5,
+      "ppr_recall": 0.25
+    }
+  },
+  "wall_seconds": 66.7
+}

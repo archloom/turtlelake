@@ -1,0 +1,49 @@
+[project]
+name = "turtlelake"
+version = "0.0.1"
+description = "Embedded graph + vector store for local AI agents: RDF in, SPARQL and GraphRAG out, one Lance directory on disk."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "Apache-2.0" }
+authors = [{ name = "archloom" }]
+dependencies = [
+    "pylance>=0.20.0",
+    "pyarrow>=16.0.0",
+    "pyoxigraph>=0.5.0",
+]
+
+[project.optional-dependencies]
+sql = ["datafusion>=42.0.0", "duckdb>=1.1.0", "polars>=1.10.0"]
+mcp = ["fastmcp>=2.0.0,<4.0"]
+shacl = ["pyshacl>=0.27.0", "rdflib>=7.0"]
+metrics = ["prometheus_client>=0.20.0"]
+# `[vectors]` is intentionally empty: pylance already provides the ANN
+# index, and turtlelake does not load embedding models — callers supply
+# pre-computed vectors. The extra exists as a conventional install hook
+# in case future vector-side helpers (e.g. quantization utilities) ship
+# behind it.
+vectors = []
+dev = [
+    "pytest>=8.0",
+    "ruff>=0.6",
+    "pyshacl>=0.27.0",
+    "rdflib>=7.0",
+    "prometheus_client>=0.20.0",
+]
+
+[project.scripts]
+turtlelake-mcp = "turtlelake.mcp_server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/turtlelake"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

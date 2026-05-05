@@ -1,0 +1,22 @@
+============================= test session starts =============================
+platform win32 -- Python 3.12.5, pytest-9.0.3, pluggy-1.6.0 -- D:\Github\turtlelake\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: D:\Github\turtlelake
+configfile: pyproject.toml
+plugins: anyio-4.13.0
+collecting ... collected 12 items
+
+tests/test_mcp_e2e.py::test_01_tools_list_returns_full_surface PASSED    [  8%]
+tests/test_mcp_e2e.py::test_01b_guide_and_schema_help_agents_self_onboard PASSED [ 16%]
+tests/test_mcp_e2e.py::test_02_agent_can_ingest_and_query PASSED         [ 25%]
+tests/test_mcp_e2e.py::test_03_agent_entity_browsing PASSED              [ 33%]
+tests/test_mcp_e2e.py::test_04_full_checkpoint_rollback_loop PASSED      [ 41%]
+tests/test_mcp_e2e.py::test_05_diff_and_provenance_round_trip PASSED     [ 50%]
+tests/test_mcp_e2e.py::test_06_unknown_entity_returns_empty_not_error PASSED [ 58%]
+tests/test_mcp_e2e.py::test_07_rollback_to_missing_tag_returns_error_json PASSED [ 66%]
+tests/test_mcp_e2e.py::test_08_malformed_sparql_returns_redacted_error PASSED [ 75%]
+tests/test_mcp_e2e.py::test_09_ingest_nonexistent_path_is_graceful PASSED [ 83%]
+tests/test_mcp_e2e.py::test_10_blocked_sparql_update_never_reaches_engine PASSED [ 91%]
+tests/test_mcp_e2e.py::test_11_shacl_validate_flags_a_real_violation PASSED [100%]
+
+======================== 12 passed in 62.78s (0:01:02) ========================

@@ -1,0 +1,11 @@
+============================= test session starts =============================
+platform win32 -- Python 3.12.5, pytest-9.0.3, pluggy-1.6.0 -- D:\Github\turtlelake\.venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: D:\Github\turtlelake
+configfile: pyproject.toml
+plugins: anyio-4.13.0
+collecting ... collected 1 item
+
+tests/test_mcp_e2e.py::test_11_shacl_validate_flags_a_real_violation PASSED [100%]
+
+============================== 1 passed in 6.90s ==============================

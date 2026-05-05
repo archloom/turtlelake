@@ -1,0 +1,27 @@
+downloading MuSiQue dataset...
+  1000 questions, 11656 corpus paragraphs
+  scoring 200 questions
+  fitting embedder...
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+downloading https://raw.githubusercontent.com/OSU-NLP-Group/HippoRAG/main/reproduce/dataset/musique.json → C:\Users\jdbolano\.cache\turtlelake-bench\d2084da5b73710b1.json
+downloading https://raw.githubusercontent.com/OSU-NLP-Group/HippoRAG/main/reproduce/dataset/musique_corpus.json → C:\Users\jdbolano\.cache\turtlelake-bench\4a4969b0c0f2df74.json
+
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]
+Loading weights: 100%|██████████| 103/103 [00:00<00:00, 2576.29it/s]
+  embedder: sentence-transformers/all-MiniLM-L6-v2 (dim=384) in 23.9s
+  embedding paragraphs...
+  embedded 11656 paragraphs in 326.6s
+  ingesting RDF...
+    49618 quads, 14650 mention edges in 249.4s
+  index: built (auto:flat)
+  scoring questions...
+    50/200  flat=0.512  graph=0.630  hybrid=0.533  ppr=0.440
+    100/200  flat=0.503  graph=0.598  hybrid=0.503  ppr=0.417
+    150/200  flat=0.503  graph=0.592  hybrid=0.506  ppr=0.407
+    200/200  flat=0.483  graph=0.602  hybrid=0.501  ppr=0.407
+wrote D:\Github\turtlelake\scripts\benchmarks\results\musique_minilm.json
+
+  flat     recall = 0.483    QPS = 118.2
+  graph    recall = 0.602    QPS = 3.5
+  hybrid   recall = 0.501    QPS = 83.0
+  ppr      recall = 0.407    QPS = 132.0
